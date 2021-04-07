@@ -1,6 +1,8 @@
 import os
 import shutil
-
+"""
+Script to get the selected jpgs
+"""
 # get the selected ids
 selected_id_file = open("selected_ids.txt", "r")
 selected_ids = []
@@ -30,14 +32,11 @@ for id in selected_ids:
 
 print(len(selected_jpg_celeb_dict), "images selected")
 
-counter = 0
 pics = os.listdir("img_celeba")
-# for jpg in selected_jpg_celeb_dict:
-#     path = "img_celeba/" + jpg
-#     counter += 1
-#
-#     shutil.copy(path, 'selected_jpgs')
-#     print(counter)
+for jpg in selected_jpg_celeb_dict:
+    path = "img_celeba/" + jpg
+
+    shutil.copy(path, 'selected_jpgs')
 
 print(len(os.listdir("selected_jpgs")), "len of selected jpgs")
 
