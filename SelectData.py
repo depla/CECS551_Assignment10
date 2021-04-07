@@ -1,4 +1,5 @@
 import os
+import shutil
 
 # get the selected ids
 selected_id_file = open("selected_ids.txt", "r")
@@ -29,9 +30,17 @@ for id in selected_ids:
 
 print(len(selected_jpg_celeb_dict), "images selected")
 
-pics = os.scandir("img_celeba")
-for entry in pics:
-    print(entry)
+counter = 0
+pics = os.listdir("img_celeba")
+# for jpg in selected_jpg_celeb_dict:
+#     path = "img_celeba/" + jpg
+#     counter += 1
+#
+#     shutil.copy(path, 'selected_jpgs')
+#     print(counter)
+
+print(len(os.listdir("selected_jpgs")), "len of selected jpgs")
+
 
 
 
