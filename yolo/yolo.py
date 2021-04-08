@@ -18,7 +18,7 @@ import cv2
 
 from yolo.model import eval
 
-from keras import backend as K
+import tensorflow.python.keras.backend as K
 from keras.models import load_model
 from timeit import default_timer as timer
 from PIL import ImageDraw, Image
