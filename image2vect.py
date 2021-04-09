@@ -1,5 +1,4 @@
 from keras.models import load_model
-from yolo import yolo
 import os
 from PIL import Image
 import numpy as np
