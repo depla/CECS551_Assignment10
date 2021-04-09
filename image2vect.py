@@ -66,10 +66,10 @@ def image2vect(filename):
 
 
 # test the image2vect function
-path = 'selected_jpgs/052003.jpg' # cant recognize face for this pic
-# path = 'selected_jpgs/000109.jpg'
-embedding = image2vect(path)
-print(embedding)
+# path = 'selected_jpgs/052003.jpg' # cant recognize face for this pic
+# # path = 'selected_jpgs/000109.jpg'
+# embedding = image2vect(path)
+# print(embedding)
 
 
 ################################ FAILED YOLO STUFF #####################################

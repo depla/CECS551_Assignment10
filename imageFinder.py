@@ -4,6 +4,7 @@ from image2vect import image2vect
 from sklearn.metrics.pairwise import euclidean_distances
 from matplotlib import pyplot
 from PIL import Image
+import json
 
 folder_name = 'selected_jpgs/'
 
@@ -24,7 +25,7 @@ def imageFinder(input_image, tau):
         # skip the input pic
         if pic != input_image:
             counter += 1
-            print("Working on distance", counter, "out of 1199. Pic name:", pic)
+            print("Working on distance", counter, "out of", len(pics) - 1, ". Pic name:", pic)
             # find the embedding for the other pic
             other_embedding = image2vect(folder_name + pic)
             distance = euclidean_distances(input_embedding, other_embedding)
@@ -40,11 +41,27 @@ def imageFinder(input_image, tau):
     return list_of_images_of_celeb
 
 
+def save_embeddings_into_json(directory):
+    dict_of_embeddings = {}
+    pics = os.listdir(directory)
+    counter = 0
+    for pic in pics:
+        counter += 1
+        print("Working on embedding", counter, "out of", len(pics), "Pic name:", pic)
+        embedding = image2vect(directory + '/' + pic)
+        dict_of_embeddings[pic] = embedding.tolist()
+
+    j = json.dumps(dict_of_embeddings)
+    file = open('embedding_dict.json', 'w')
+    file.write(j)
+    file.close()
+
+
 
 
 # test
-image = '054110.jpg'
-list = imageFinder(image, 1)
-print(len(list))
-print(type(list))
-print(list)
+# image = '054110.jpg'
+# list = imageFinder(image, 1)
+# print(len(list))
+# print(type(list))
+# print(list)
