@@ -1,5 +1,0 @@
-classes= 1
-train  = train.txt  
-valid  = testWider.txt  
-names = config-files/face.names
-backup = backup/
