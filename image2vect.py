@@ -43,6 +43,11 @@ print("Loading FaceNet Model")
 face_net_model = load_model('facenet_keras.h5')
 downscale_size = (160, 160)
 
+print("Loading Yolo v3 Model")
+net = cv2.dnn.readNetFromDarknet(args.model_cfg, args.model_weights)
+net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
+net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
+
 # extract a single face from a given photograph
 def image2vect(filename):
     # load image from file
@@ -50,9 +55,6 @@ def image2vect(filename):
     # # convert to array
     # pixels = np.asarray(image)
 
-    net = cv2.dnn.readNetFromDarknet(args.model_cfg, args.model_weights)
-    net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
-    net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
     cap = cv2.VideoCapture(filename)
     has_frame, frame = cap.read()
     # Create a 4D blob from a frame.
@@ -85,8 +87,8 @@ def image2vect(filename):
     image = Image.fromarray(face)
     image = image.resize(downscale_size)
     face_array = np.asarray(image)
-    pyplot.imshow(face_array)
-    pyplot.show()
+    # pyplot.imshow(face_array)
+    # pyplot.show()
     # print(face_array.shape)
 
     # # create the detector, using default weights
