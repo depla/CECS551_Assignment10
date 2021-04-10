@@ -132,3 +132,4 @@ dmypy.json
 .pyre/
 model-weights/yolov3-wider_16000.weights
 YOLO_Face.h5
+yoloface/
