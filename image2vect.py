@@ -5,6 +5,7 @@ import numpy as np
 from mtcnn.mtcnn import MTCNN
 from matplotlib import pyplot
 from sklearn.preprocessing import normalize
+from darknet.python.darknet import load_net, load_image, load_meta, detect
 
 """
 FaceNet Model from:
@@ -70,6 +71,21 @@ def image2vect(filename):
 # embedding = image2vect(path)
 # print(embedding)
 
+if __name__ == "__main__":
+    # net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
+    net = load_net(bytes("config-files/face.cfg", encoding="utf-8"), bytes("face.weights", encoding="utf-8"), 0, bytes("config-files/face.data",encoding="utf-8"))
+    # im = load_image("data/wolf.jpg", 0, 0)
+    # im = load_image("selected_jpgs/000109.jpg", 0, 0)
+    # #meta = load_meta("cfg/imagenet1k.data")
+    meta = load_meta(bytes("config-files/face.cfg", encoding="utf-8"))
+    results = detect(net, meta, bytes("selected_jpgs/004659.jpg", encoding="utf-8"))
+    print(results)
+    # r = classify(net, meta, im)
+    # print(r[:10])
+    # net = load_net("cfg/tiny-yolo.cfg", "tiny-yolo.weights", 0)
+    # meta = load_meta("cfg/coco.data")
+    # r = detect(net, meta, "data/dog.jpg")
+    # print(r)
 
 ################################ FAILED YOLO STUFF #####################################
 # couldn't get the YOLO from https://github.com/sthanhng/yoloface to cooperate.
