@@ -90,9 +90,10 @@ def image2vect(filename):
     # prepare pixels for facenet
     face_pixels = np.expand_dims(face_pixels, axis=0)
     # print(face_pixels.shape)
-    # make prediction to get embedding
+    # use facenet to get embedding
     embedding_unnormalized = face_net_model.predict(face_pixels)
     embedding_unnormalized = embedding_unnormalized[0]
+    # use l2 normalization
     embedding = normalize(embedding_unnormalized.reshape(1, -1), norm='l2')
 
     return embedding
