@@ -3,17 +3,13 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
-# list_of_taus = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0]
-# list_of_taus = [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1,
-#                 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2.0]
-# list_of_taus = [0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6]
 interval_taus = 0.05
 num_decimals = len(str(interval_taus).split('.')[1])
 max_range = 2 + interval_taus
 list_of_taus = np.arange(0, max_range, interval_taus)
 list_of_taus = np.around(list_of_taus, num_decimals)
 
-# run to create json file of all embeddings
+# uncomment the line below to create json file of all embeddings
 # save_embeddings_into_json('selected_jpgs')
 
 # get dict of jpg-celebs
@@ -110,7 +106,6 @@ for celeb_id in celeb_metrics:
 plt.title('Precision Plot')
 plt.xlabel('Tau')
 plt.ylabel('Precision')
-# plt.xticks(np.arange(0, 2.1, 0.1))
 plt.legend()
 plt.show()
 
@@ -134,6 +129,5 @@ for celeb_id in celeb_metrics:
 plt.title('Recall Plot')
 plt.xlabel('Tau')
 plt.ylabel('Recall')
-# plt.xticks(np.arange(0, 2.1, 0.1))
 plt.legend()
 plt.show()
