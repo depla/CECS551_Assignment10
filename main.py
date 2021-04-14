@@ -3,6 +3,12 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+"""
+CECS 551 - Assignment 10 - Yolo FaceNet
+Alex Nassif
+Dennis La
+Sophanna Ek
+"""
 interval_taus = 0.05
 num_decimals = len(str(interval_taus).split('.')[1])
 max_range = 2 + interval_taus

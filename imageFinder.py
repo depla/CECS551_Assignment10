@@ -8,7 +8,12 @@ import json
 
 folder_name = 'selected_jpgs/'
 
-
+"""
+CECS 551 - Assignment 10 - Yolo FaceNet
+Alex Nassif
+Dennis La
+Sophanna Ek
+"""
 def imageFinder(input_image, tau):
     # image = Image.open(folder_name + input_image)
     # image_pix = np.asarray(image)

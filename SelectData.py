@@ -1,6 +1,13 @@
 import os
 import shutil
 """
+CECS 551 - Assignment 10 - Yolo FaceNet
+Alex Nassif
+Dennis La
+Sophanna Ek
+"""
+
+"""
 Script to get the selected jpgs
 """
 # get the selected ids
