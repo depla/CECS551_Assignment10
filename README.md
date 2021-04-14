@@ -6,3 +6,6 @@ $ git clone https://github.com/sthanhng/yoloface
 
 Then download the yolov3-wider_16000.weights file here and save it into the model-weights directory of the cloned yoloface repository.
 https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view
+
+FaceNet downloaded from this repository. Just place it your the working directory.
+https://github.com/nyoki-mtl/keras-facenet
