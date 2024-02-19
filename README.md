@@ -1,4 +1,6 @@
 # CECS551_Assignment10
+Assignment prompt: See Assignment_10.pdf
+Assignment results: See Assignment_10_report.pdf
 Enter the comand in the workspace to clone the repo from https://github.com/sthanhng/yoloface
 ```bash
 $ git clone https://github.com/sthanhng/yoloface
